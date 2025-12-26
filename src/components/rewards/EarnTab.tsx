@@ -12,14 +12,13 @@ export default function EarnTab({ profile, onRefresh }: { profile: Profile; onRe
       try {
         const checkins = await fetchDailyCheckins(profile.id);
         
-        // Calculate streak (consecutive days)
+        
         const today = new Date().toISOString().split("T")[0];
         
         const claimedToday = checkins.some(c => c.created_at.startsWith(today));
         setHasClaimedToday(claimedToday);
 
-        // Simple streak logic for demo purposes (count total checkins or calculate gaps)
-        // Here we just count total for simplicity or check last few days
+       
         setStreak(checkins.length); 
       } catch (err) {
         console.error(err);
@@ -35,8 +34,7 @@ export default function EarnTab({ profile, onRefresh }: { profile: Profile; onRe
       setHasClaimedToday(true);
       setStreak(prev => prev + 1);
       onRefresh();
-      // Toast would be here if available, but instructions say "Toasts are used only for user actions"
-      // and "Maintain existing logic". I'll assume standard window.alert if needed or just update UI.
+      
     } catch (err: any) {
       alert(err.message || "Failed to claim points");
     } finally {
