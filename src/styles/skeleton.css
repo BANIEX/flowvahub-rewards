@@ -1,0 +1,27 @@
+
+@keyframes pulse {
+  0% { opacity: 0.60; }
+  50% { opacity: 0.95; }
+  100% { opacity: 0.60; }
+}
+
+.skeleton {
+  background: #eef1f8;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.skeleton-line {
+  height: 10px;
+  border-radius: 999px;
+  margin: 10px 0;
+}
+
+.skeleton-line.short { width: 40%; }
+.skeleton-line.mid { width: 65%; }
+.skeleton-line.long { width: 90%; }
+
+.skeleton-btn {
+  height: 42px;
+  border-radius: 12px;
+  margin-top: 16px;
+}

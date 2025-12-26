@@ -1,0 +1,26 @@
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+.card--padded {
+  padding: 18px 18px;
+}
+
+.card--hoverable {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.card--hoverable:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* locked/disabled cards should NOT feel interactive */
+.card--disabled {
+  opacity: 0.65;
+  pointer-events: none;
+}
