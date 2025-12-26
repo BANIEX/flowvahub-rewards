@@ -61,7 +61,7 @@ export default function RewardsDashboard() {
   if (loading) {
     return (
       <PageContainer>
-        <div style={{ display: 'flex', flex: 1, height: '80vh', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', height: '100vh', alignItems: 'center', justifyContent: 'center', width: '100vw'  }}>
           <div className="loading-container">
             <div className="spinner" />
             <div style={{ color: "var(--muted)", fontWeight: 500, fontSize: 14 }}>
@@ -120,15 +120,11 @@ export default function RewardsDashboard() {
 
         <div className="sidebar__footer">
           <div className="sidebar__divider" />
-          <button className="sidebar__logout" onClick={handleLogout}>
-            <LogOut size={18} />
-            <span>Log Out</span>
-          </button>
           
           <div className="sidebar__profile">
             <div className="sidebar__avatar">
               <img 
-                src={user?.avatar_url || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user?.email || 'User'}`} 
+                src={ `https://ui-avatars.com/api/?name=${user?.email || 'User'}`} 
                 alt="Avatar" 
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
@@ -142,6 +138,11 @@ export default function RewardsDashboard() {
               </div>
             </div>
           </div>
+
+          <button className="sidebar__logout" onClick={handleLogout}>
+            <LogOut size={18} />
+            <span>Log Out</span>
+          </button>
         </div>
       </aside>
 

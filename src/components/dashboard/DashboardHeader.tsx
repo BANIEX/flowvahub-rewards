@@ -1,3 +1,5 @@
+import { Bell } from "lucide-react";
+
 type Props = {
   title: string;
   subtitle: string;
@@ -17,7 +19,7 @@ export default function DashboardHeader({
       </div>
 
       <div className="bell" aria-label="Notifications">
-        <span style={{ fontSize: 18 }}>🔔</span>
+        <Bell size={20} strokeWidth={2.5} color="var(--muted)" />
         <span className="bell__badge">{notificationCount}</span>
       </div>
     </div>
